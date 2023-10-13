@@ -1,0 +1,47 @@
+from django.shortcuts import render
+from django.http import HttpResponse, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from web.models import Expense, Income, Token, User
+from json import JSONEncoder
+from datetime import datetime
+
+# Create your views here.
+def index(request):
+    context= {}
+    #return HttpResponse("Hello, world. You're at the web index.")
+    return render(request, 'index.html', context)
+
+@csrf_exempt
+def submit_expense(request):
+    """ submit an expense"""
+    #TODO: validate date, user might be fake, token might be fake, amount might be invalid
+    this_token = request.POST['token']
+    this_user = User.objects.filter(token__token=this_token).get()
+    Expense.objects.create(
+        user=this_user,
+        amount=request.POST['amount'],
+        text=request.POST['text'],
+        date=datetime.now(), #TODO user might want submit date herself
+    )
+    return JsonResponse(
+        {'status': 'ok',},
+        encoder=JSONEncoder
+    )
+
+@csrf_exempt
+def submit_income(request):
+    """ submit an income"""
+    print(request.POST)
+    #TODO: validate date, user might be fake, token might be fake, amount might be invalid
+    this_token = request.POST['token']
+    this_user = User.objects.filter(token__token=this_token).get()
+    Income.objects.create(
+        user=this_user,
+        amount=request.POST['amount'],
+        text=request.POST['text'],
+        date=datetime.now(), #TODO user might want submit date herself
+    )
+    return JsonResponse(
+        {'status': 'ok',},
+        encoder=JSONEncoder
+    )
