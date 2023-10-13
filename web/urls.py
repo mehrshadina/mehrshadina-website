@@ -5,10 +5,6 @@ from . import views
 
 
 urlpatterns = [
-    # ... the rest of your URLconf goes here ...
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-urlpatterns = [
     path('', views.index, name='index'),
     path('submit/expense/', views.submit_expense, name='submit_expense'),
     path('submit/income/', views.submit_income, name='income'),
