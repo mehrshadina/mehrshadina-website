@@ -727,11 +727,16 @@ a:hover {
     opacity: .9;
 }
 
+
 .service-box {
+  height: 90%; /* ارتفاع 100% */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #fff;
   padding: 2.5rem 1.3rem;
   border-radius: 1rem;
-  margin-bottom: 3rem;
+  /*margin-bottom: 3rem;*/
 }
 
 .service-box:hover .ico-circle {
