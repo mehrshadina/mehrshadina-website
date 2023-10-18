@@ -436,7 +436,7 @@ a:hover {
 
 .navbar-b.navbar-trans .nav-link:hover:before,
 .navbar-b.navbar-reduce .nav-link:hover:before {
-  width: 120px;
+  width: 85px;
 }
 
 .navbar-b.navbar-trans .show > .nav-link:before,
