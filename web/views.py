@@ -11,6 +11,30 @@ def index(request):
     #return HttpResponse("Hello, world. You're at the web index.")
     return render(request, 'index.html', context)
 
+def contact(request):
+    context= {}
+    return render(request, 'contact.html', context)
+
+def about(request):
+    context= {}
+    return render(request, 'about.html', context)
+
+def donate(request):
+    context= {}
+    return render(request, 'donate.html', context)
+
+def project_order(request):
+    context= {}
+    return render(request, 'project_order.html', context)
+
+def tutoring(request):
+    context= {}
+    return render(request, 'tutoring.html', context)
+
+def projects(request):
+    context= {}
+    return render(request, 'projects.html', context)
+
 @csrf_exempt
 def submit_expense(request):
     """ submit an expense"""
