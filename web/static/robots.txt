@@ -1,0 +1,6 @@
+# robots.txt
+User-agent: *
+Disallow: /admin/
+Disallow: /path/to/private/
+Allow: /path/to/public/
+Sitemap: https://dorebot.ir/sitemap.xml
