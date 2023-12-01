@@ -2,5 +2,5 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /path/to/private/
-Allow: /path/to/public/
+Allow: *
 Sitemap: https://dorebot.ir/sitemap.xml
