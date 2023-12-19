@@ -1,4 +1,14 @@
+/* Fonts */
+@font-face {
+  font-family: 'vazir';
+  src: url('/static/fonts/Vazir.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General Styles */
 body {
+  font-family: 'vazir', sans-serif;
   background-color: #f5f5f5;
   color: #4e4e4e;
 }
