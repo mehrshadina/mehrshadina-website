@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,47 +71,13 @@
   <!--/ Section Order Project Star /-->
   <section class="order-project sect-pt4" id="order-project">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-right">
-          <h2>اطلاعات پروژه</h2>
-          <p class="intro-subtitle mb-4">با استفاده از این صفحه، شما می‌توانید پروژه‌های مختلف خود را به من بسپارید تا من آنها را برای شما انجام دهیم. لطفاً جزئیات پروژه مورد نظرتان را در فرم زیر وارد کنید و برای من ارسال کنید.</p>
-          <ol class="breadcrumb d-flex justify-content-center">
-            <form id="project-form" class="form-mf" style="direction: rtl;">
-              {% csrf_token %}
-              <div id="success-message"></div>
-              <div class="row">
-                  <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                          <input type="text" name="name" class="form-control input-mf" placeholder="نام و نام خانوادگی *" required>
-                      </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                          <input type="email" name="email" class="form-control input-mf" placeholder="ایمیل *" required>
-                      </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                          <input type="text" name="title" class="form-control input-mf" placeholder="عنوان پروژه *" required>
-                      </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                          <input type="text" name="price" class="form-control input-mf" placeholder="بودجه مورد نظر (در دلار یا تومان) *" required>
-                      </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                          <textarea name="information" class="form-control input-mf" placeholder="توضیحات پروژه *" cols="45" rows="8" required></textarea>
-                      </div>
-                  </div>
-                  <div class="col-md-12">
-                      <button type="button" onclick="submitForm()" class="button button-a button-big button-rouded">سفارش پروژه</button>
-                  </div>
-              </div>
-          </form>          
-        </div>
-      </div>
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
   </section>
   <!--/ Section Order Project End /-->
@@ -138,46 +105,6 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
-    function submitForm() {
-        var form = document.getElementById('project-form');
-        var formData = new FormData(form);
-
-        fetch("{% url 'submit_project' %}", {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-                showSuccessMessage();
-            } else {
-                console.error('خطا در ارسال فرم.');
-            }
-        })
-        .catch(error => {
-            console.error('خطا در ارسال فرم:', error);
-        });
-    }
-
-    function showSuccessMessage() {
-        Swal.fire({
-            title: 'پروژه با موفقیت ارسال شد!',
-            icon: 'success',
-            showConfirmButton: false,
-            timer: 2000
-        }).then(() => {
-            clearForm();
-        });
-    }
-
-    function clearForm() {
-        var form = document.getElementById('project-form');
-        form.reset();
-    }
-  </script>
-
-  </script>
   <script src="/static/lib/jquery/jquery.min.js"></script>
   <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
   <script src="/static/lib/popper/popper.min.js"></script>

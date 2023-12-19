@@ -1,7 +1,8 @@
-"""mehrshadina URL Configuration
+"""
+URL configuration for mehrshadina project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,9 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from web import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('web.urls')),
+    path('', views.index, name='index'),
+    path('contact/', views.contact, name='contact'),
+    path('about/', views.about, name='about'),
+    path('donate/', views.donate, name='donate'),
+    path('project_order/', views.project_order, name='project-order'),
+    path('tutoring/', views.tutoring, name='tutoring'),
+    path('projects/', views.projects, name='projects'),
+
+    path('submit/expense/', views.submit_expense, name='submit_expense'),
+    path('submit/income/', views.submit_income, name='income'),
+    path('submit/project/', views.create_project, name='submit_project'),
 ]

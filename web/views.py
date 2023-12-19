@@ -4,6 +4,10 @@ from django.views.decorators.csrf import csrf_exempt
 from web.models import Expense, Income, Token, User
 from json import JSONEncoder
 from datetime import datetime
+from django.shortcuts import render, redirect
+from .models import Project
+from .forms import ProjectForm
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -69,3 +73,17 @@ def submit_income(request):
         {'status': 'ok',},
         encoder=JSONEncoder
     )
+
+#@csrf_exempt
+def create_project(request):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'پروژه با موفقیت ثبت شد.')
+            return JsonResponse({'status': 'success'})
+
+    else:
+        form = ProjectForm()
+
+    return render(request, 'create_project.html', {'form': form})
