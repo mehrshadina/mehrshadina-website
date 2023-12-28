@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /admin/
 Allow: *
-Sitemap: https://dorebot.ir/sitemap.xml
+Sitemap: https://mehrshadina.ir/sitemap.xml
