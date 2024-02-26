@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Order a Project | سفارش پروژه</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" shrink-to-fit=no>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <link href="/static/img/favicon.png" rel="icon">
+  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!--/ Nav Star /-->
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="/">Mehrshadina</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll active" href="/">Home | خانه</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/donate/">Donate | دونیت</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/about/">About | درباره</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/contact/">Contact | ارتباط</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Nav End /-->
+
+  <!--/ Intro Skew Star /-->
+  <div class="intro intro-single route bg-image" style="background-image: url(/static/img/overlay-bg.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="intro-title mb-4">سفارش پروژه</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Order a Project /</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Intro Skew End /-->  
+
+  <!--/ Section Order Project Star /-->
+  <section class="order-project sect-pt4" id="order-project">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <h2>اطلاعات پروژه</h2>
+          <p class="intro-subtitle mb-4">با استفاده از این صفحه، شما می‌توانید پروژه‌های مختلف خود را به من بسپارید تا من آنها را برای شما انجام دهیم. لطفاً جزئیات پروژه مورد نظرتان را در فرم زیر وارد کنید و برای من ارسال کنید.</p>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <form id="project-form" class="form-mf" style="direction: rtl;">
+              {% csrf_token %}
+              <div id="success-message"></div>
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                          <input type="text" name="name" class="form-control input-mf" placeholder="نام و نام خانوادگی *" required>
+                      </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                          <input type="email" name="email" class="form-control input-mf" placeholder="ایمیل *" required>
+                      </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                          <input type="text" name="title" class="form-control input-mf" placeholder="عنوان پروژه *" required>
+                      </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <div class="form-group">
+                          <input type="text" name="price" class="form-control input-mf" placeholder="بودجه مورد نظر (در دلار یا تومان) *" required>
+                      </div>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                      <div class="form-group">
+                          <textarea name="information" class="form-control input-mf" placeholder="توضیحات پروژه *" cols="45" rows="8" required></textarea>
+                      </div>
+                  </div>
+                  <div class="col-md-12">
+                      <button type="button" onclick="submitForm()" class="button button-a button-big button-rouded">سفارش پروژه</button>
+                  </div>
+              </div>
+          </form>          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Section Order Project End /-->
+
+  <!--/ Section Contact-Footer Star /-->
+  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(/static/img/overlay-bg.jpg)">
+    <div class="overlay-mf"></div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright-box text-white">
+              <p class="copyright">&copy; Copyright <strong>Mehrshadina</strong>. All Rights Reserved</p>
+              <div class="credits">
+                Designed by <a class="text-white" href="/">Mehrshadina</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+  <!--/ Section Contact-footer End /-->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    function submitForm() {
+        var form = document.getElementById('project-form');
+        var formData = new FormData(form);
+
+        fetch("{% url 'submit_project' %}", {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                showSuccessMessage();
+            } else {
+                console.error('خطا در ارسال فرم.');
+            }
+        })
+        .catch(error => {
+            console.error('خطا در ارسال فرم:', error);
+        });
+    }
+
+    function showSuccessMessage() {
+        Swal.fire({
+            title: 'پروژه با موفقیت ارسال شد!',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000
+        }).then(() => {
+            clearForm();
+        });
+    }
+
+    function clearForm() {
+        var form = document.getElementById('project-form');
+        form.reset();
+    }
+  </script>
+
+  </script>
+  <script src="/static/lib/jquery/jquery.min.js"></script>
+  <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/static/lib/popper/popper.min.js"></script>
+  <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/lib/easing/easing.min.js"></script>
+  <script src="/static/lib/counterup/jquery.waypoints.min.js"></script>
+  <script src="/static/lib/counterup/jquery.counterup.js"></script>
+  <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="/static/contactform/contactform.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
