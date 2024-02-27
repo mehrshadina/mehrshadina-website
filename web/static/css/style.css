@@ -239,7 +239,7 @@ a:hover {
 .widget-sidebar .list-sidebar,
 .widget-tags ul {
   list-style: none;
-  padding-right: 0;
+  padding-right: 20px;
   margin-bottom: 0;
 }
 

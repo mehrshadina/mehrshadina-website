@@ -18,7 +18,6 @@
 
 
 <body>
-  <!--/ Nav Star /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll" href="/">Mehrshadina</a>
@@ -43,13 +42,14 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="/contact/">Contact | ارتباط</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/blog/">Blog | بلاگ</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-  <!--/ Nav End /-->
 
-  <!--/ Intro Skew Star /-->
   <div class="intro intro-single route bg-image" style="background-image: url(/static/img/overlay-bg.jpg)">
     <div class="overlay-mf"></div>
     <div class="intro-content display-table">
@@ -66,11 +66,9 @@
       </div>
     </div>
   </div>
-  <!--/ Intro Skew End /-->
 
-  <!--/ Section Blog-Single Star /-->
   <section class="blog-wrapper sect-pt4" id="blog">
-    <div class="container">
+    <div class="container text-right" style="direction: rtl;">
       <div class="row">
         <div class="col-md-8">
           <div class="post-box">
@@ -134,11 +132,6 @@
                  "Buy Me a Coffee" به افراد امکان می‌دهند تا از طریق خرید یک فنجان قهوه (یا چای) به خالقان محتوا حمایت کنند.
                  <li>Ko-fi: <a href="https://www.buymeacoffee.com/mehrshadina" style="color:#0078ff">https://www.buymeacoffee.com/mehrshadina</a></li>
               </p>
-              <!--br><br>
-              <strong>خرید محصولات یا خدمات:</strong><br>
-              <br><br>
-                <strong>سهام دار شدن در شرکت:</strong><br>
-                 <!--اگر شما به اشتراک‌گذاری یک شرکت یا استارتاپ فکر می‌کنید، می‌توانید اقساطی از شرکت را خریداری کنید و در صورت موفقیت آن شرکت، به عنوان سهام‌دار سودها را به اشتراک بگذارید.-->
               <blockquote class="blockquote" style="padding-right: 15px; border-right: 4px solid #0078ff; border-left: 0px">
                 <p class="mb-0">به هر حال، هر چه روش حمایت مالی‌تان باشد، این تصمیم نه‌تنها به خود شما، بلکه به جوامع و افراد دیگر کمک می‌کند. سپاس از اراده‌ی خیر شما برای حمایت از پروژه‌ها و اهداف مختلف.</p>
               </blockquote>
@@ -210,37 +203,36 @@
               </li>
             </ul-->
           </div>
-          <div class="form-comments">
+          <div class="form-comments" style="direction: rtl;">
             <div class="title-box-2">
-              <h3 class="title-left">
-                Leave a Reply
+              <h3 class="text-right">
+                ارسال پیام
               </h3>
             </div>
             <form class="form-mf">
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <div class="form-group">
-                    <input type="text" class="form-control input-mf" id="inputName" placeholder="Name *" required>
+                    <input name="name" type="text" class="form-control input-mf" id="inputName" placeholder="نام *" required>
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="form-group">
-                    <input type="email" class="form-control input-mf" id="inputEmail1" placeholder="Email *" required>
+                    <input name="email" type="email" class="form-control input-mf" id="inputEmail1" placeholder="ایمیل *" required>
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
                   <div class="form-group">
-                    <input type="url" class="form-control input-mf" id="inputUrl" placeholder="Website">
+                    <input name="subject" type="text" class="form-control input-mf" id="inputSubject" placeholder="موضوع پیام" required>
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
                   <div class="form-group">
-                    <textarea id="textMessage" class="form-control input-mf" placeholder="Comment *" name="message"
-                      cols="45" rows="8" required></textarea>
+                    <textarea id="textMessage" class="form-control input-mf" placeholder="پیام خود را اینجا بنویسید *" name="message" cols="45" rows="8" required></textarea>
                   </div>
                 </div>
                 <div class="col-md-12">
-                  <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+                  <button type="submit" class="button button-a button-big button-rouded">ارسال پیام</button>
                 </div>
               </div>
             </form>
@@ -266,21 +258,11 @@
             <h5 class="sidebar-title">پست های اخیر</h5>
             <div class="sidebar-content">
               <ul class="list-sidebar">
+              {% for post in posts %}
                 <li>
-                  <a href="#">در حال ساخت</a>
+                  <a href="% url 'post_detail' pk=post.pk %">{{ post.title }}</a>
                 </li>
-                <li>
-                  <a href="#">...</a>
-                </li>
-                <li>
-                  <a href="#">...</a>
-                </li>
-                <li>
-                  <a href="#">...</a>
-                </li>
-                <li>
-                  <a href="#">...</a>
-                </li>
+              {% endfor %}
               </ul>
             </div>
           </div>
@@ -335,9 +317,7 @@
       </div>
     </div>
   </section>
-  <!--/ Section Blog-Single End /-->
 
-  <!--/ Section Contact-Footer Star /-->
   <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(/static/img/overlay-bg.jpg)">
     <div class="overlay-mf"></div>
     <footer>
@@ -361,7 +341,6 @@
       </div>
     </footer>
   </section>
-  <!--/ Section Contact-footer End /-->
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>

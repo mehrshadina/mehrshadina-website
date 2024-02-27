@@ -1,6 +1,195 @@
-<!-- blog/templates/blog/post_list.html -->
-{% for post in posts %}
-    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-    <p>{{ post.pub_date }} by {{ post.author }}</p>
-    <p>{{ post.content }}</p>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8">
+  <title>About | درباره من</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" shrink-to-fit=no>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <link href="/static/img/favicon.png" rel="icon">
+  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="/">Mehrshadina</a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll active" href="/">Home | خانه</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/donate/">Donate | دونیت</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/about/">About | درباره</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/contact/">Contact | ارتباط</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="/blog/">Blog | بلاگ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   <div class="intro intro-single route bg-image" style="background-image: url(/static/img/overlay-bg.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="intro-title mb-4">لیست بلاگ ها</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Blog list /</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="blog-wrapper sect-pt4" id="blog">
+      <div class="container text-right" style="direction: rtl;">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-box text-right">
+              <div class="post-thumb">
+                <img src="{{ post_image }}" class="img-fluid" alt="">
+              </div>
+              <div class="post-meta">
+                <h1 class="article-title"><p>بلاگ ها</p></h1>
+                <ul style="padding-right: 15px; border-right: 4px solid #0078ff; border-left: 0px">
+                  <li>
+                    <span class="ion-chatbox"></span>
+                    <a href="#">1</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="article-content">
+                {% for post in posts %}
+                    <div class="mt-5" style="background-color: #f5f7ff;">
+                        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                        <p>{{ post.pub_date }} by {{ post.author }}</p>
+                        <p style="direction: rtl; -webkit-line-clamp: 2;max-height: 3em; /* حداکثر ارتفاع متن به تعداد خطوط مورد نظر */
+                        overflow: hidden;
+                        text-overflow: ellipsis; /* افکت پوینتی (...) در صورت برش متن */
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2; /* تعداد خطوط مورد نظر */
+                        -webkit-box-orient: vertical;">{{ post.content }}</p>
+                    </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="widget-sidebar sidebar-search">
+              <h5 class="sidebar-title">Search</h5>
+              <div class="sidebar-content">
+                <form>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary btn-search" type="button">
+                        <span class="io ion-search"></span>
+                      </button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="widget-sidebar">
+              <h5 class="sidebar-title">پست های اخیر</h5>
+              <div class="sidebar-content">
+                <ul class="list-sidebar">
+                {% for post in posts %}
+                  <li>
+                    <a href="% url 'post_detail' pk=post.pk %">{{ post.title }}</a>
+                  </li>
+                {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <div class="widget-sidebar">
+              <h5 class="sidebar-title">آرشیو</h5>
+              <div class="sidebar-content">
+                <ul class="list-sidebar">
+                  <li>
+                    <a href="#">September, 2017.</a>
+                  </li>
+                  <li>
+                    <a href="#">April, 2017.</a>
+                  </li>
+                  <li>
+                    <a href="#">Nam quo autem exercitationem.</a>
+                  </li>
+                  <li>
+                    <a href="#">Atque placeat maiores nam quo autem</a>
+                  </li>
+                  <li>
+                    <a href="#">Nam quo autem exercitationem.</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="paralax-mf footer-paralax">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright-box">
+              <p class="copyright">
+                &copy; Copyright <strong>مهرشادینا</strong>. All Rights Reserved
+              </p>
+              <div class="credits">
+                Designed by <a href="/">Mehrshadina | مهرشادینا</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <script src="/static/lib/jquery/jquery.min.js"></script>
+  <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/static/lib/popper/popper.min.js"></script>
+  <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/lib/easing/easing.min.js"></script>
+  <script src="/static/lib/counterup/jquery.waypoints.min.js"></script>
+  <script src="/static/lib/counterup/jquery.counterup.js"></script>
+  <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="/static/lib/typed/typed.min.js"></script>
+  <script src="/static/contactform/contactform.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

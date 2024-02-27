@@ -8,9 +8,8 @@
 
   <meta content="" name="keywords">
   <link href="/static/img/favicon.png" rel="icon">
-  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="/static/css/style.css" rel="stylesheet">
 </head>
@@ -30,7 +29,6 @@
           <li class="nav-item">
             <a class="nav-link js-scroll active" href="/">Home | خانه</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link js-scroll" href="/donate/">Donate | دونیت</a>
           </li>
@@ -47,7 +45,6 @@
       </div>
     </div>
   </nav>
-  
   
   <div id="home" class="intro route bg-image" style="background-image: url(/static/img/background.jpg)">
     <div class="overlay-itro"></div>
@@ -176,14 +173,14 @@
     </div>
   </section>
   
-  <div class="section-counter paralax-mf bg-image" style="background-image: url(static/img/background.jpg)">
-    <div class="overlay-mf" style="opacity: 1 ; background-color: rgba(107,104,98, 0.5);"></div>
+  <div class="section-counter paralax-mf bg-image" style="background-image: url(/static/img/overlay-bg.jpg)">
+    <div class="overlay-mf"></div>
     <div class="container position-relative">
       <div class="row">
         <div class="col-sm-3 col-lg-3">
           <div class="counter-box counter-box pt-4 pt-md-0">
             <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-check"></i></span>
+              <span class="ico-circle"><i class="ion-checkmark"></i></span>
             </div>
             <div class="counter-num">
               <p data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1" class="counter purecounter"></p>
@@ -194,7 +191,7 @@
         <div class="col-sm-3 col-lg-3">
           <div class="counter-box pt-4 pt-md-0">
             <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-journal-richtext"></i></span>
+              <span class="ico-circle"><i class="ion-code-working"></i></span>
             </div>
             <div class="counter-num">
               <p data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="counter purecounter"></p>
@@ -205,7 +202,7 @@
         <div class="col-sm-3 col-lg-3">
           <div class="counter-box pt-4 pt-md-0">
             <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-people"></i></span>
+              <span class="ico-circle"><i class="ion-ios-people"></i></span>
             </div>
             <div class="counter-num">
               <p data-purecounter-start="0" data-purecounter-end="36" data-purecounter-duration="1" class="counter purecounter"></p>
@@ -216,7 +213,7 @@
         <div class="col-sm-3 col-lg-3">
           <div class="counter-box pt-4 pt-md-0">
             <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-award"></i></span>
+              <span class="ico-circle"><i class="ion-ios-star"></i></span>
             </div>
             <div class="counter-num">
               <p data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="counter purecounter"></p>
@@ -249,34 +246,34 @@
           <a href="{% url 'post_detail' pk=post.pk %}">
             <div class="card card-blog">
               <div class="card-img">
-                <a href="{% url 'post_detail' pk=post.pk %}"><img src="{{ post.image }}" alt="" class="img-fluid"></a>
+                  <img src="{{ post.image }}" alt="" class="img-fluid">
               </div>
               <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">{{ post.category }}</h6>
+                  <div class="card-category-box">
+                      <div class="card-category">
+                          <h6 class="category">{{ post.category }}</h6>
+                      </div>
                   </div>
-                </div>
-                <h3 class="card-title text-right"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
-                <p class="card-description text-right" style="direction: rtl; -webkit-line-clamp: 2;max-height: 3em; /* حداکثر ارتفاع متن به تعداد خطوط مورد نظر */
-                overflow: hidden;
-                text-overflow: ellipsis; /* افکت پوینتی (...) در صورت برش متن */
-                display: -webkit-box;
-                -webkit-line-clamp: 2; /* تعداد خطوط مورد نظر */
-                -webkit-box-orient: vertical;">
-                  {{ post.content }}
-                </p>
+                  <h3 class="card-title text-right">{{ post.title }}</h3>
+                  <p class="card-description text-right" style="direction: rtl; -webkit-line-clamp: 2;max-height: 3em; /* حداکثر ارتفاع متن به تعداد خطوط مورد نظر */
+                      overflow: hidden;
+                      text-overflow: ellipsis; /* افکت پوینتی (...) در صورت برش متن */
+                      display: -webkit-box;
+                      -webkit-line-clamp: 2; /* تعداد خطوط مورد نظر */
+                      -webkit-box-orient: vertical;">
+                      {{ post.content }}
+                  </p>
               </div>
               <div class="card-footer text-right" style="direction: rtl;">
-                <div class="post-author">
-                  <a href="/about/">
-                    <img src="static/img/myself.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">{{ post.author }}</span>
-                  </a>
-                </div>
-                <div class="post-date mr-2" style="direction: ltr;">
-                  <span class="bi bi-clock "></span> {{ post.time_required }} min
-                </div>
+                  <div class="post-author">
+                      <a href="/about/">
+                          <img src="static/img/myself.jpg" alt="" class="avatar rounded-circle">
+                          <span class="author">{{ post.author }}</span>
+                      </a>
+                  </div>
+                  <div class="post-date mr-2" style="direction: ltr;">
+                      <span class="bi bi-clock "></span> {{ post.time_required }} min
+                  </div>
               </div>
             </div>
           </a>
@@ -285,7 +282,6 @@
       </div>
     </div>
   </section>
-
 
   <section class="paralax-mf footer-paralax">
     <footer>
@@ -305,7 +301,6 @@
       </div>
     </footer>
   </section>
-
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
