@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-7##c68!c!8cdr9kc@$(t@8cf%jr7od48m4_k**_b*1akjf5!=1
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://mehrshadina.ir']
 
 
 # Application definition
