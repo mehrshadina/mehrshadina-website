@@ -8,7 +8,6 @@
 
   <meta content="" name="keywords">
   <link href="/static/img/favicon.png" rel="icon">
-  <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="/static/css/style.css" rel="stylesheet">
@@ -246,7 +245,7 @@
           <a href="{% url 'post_detail' pk=post.pk %}">
             <div class="card card-blog">
               <div class="card-img">
-                  <img src="{{ post.image }}" alt="" class="img-fluid">
+                  <img src="{{ post.image }}" alt="" class="img-fluid" style="max-height: 165px;">
               </div>
               <div class="card-body">
                   <div class="card-category-box">
