@@ -10,6 +10,7 @@ class Categories(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=200)
     image = models.URLField(null=True)
+    images = models.ManyToManyField('Image', blank=True)
     content = models.TextField()
     category = models.ForeignKey(Categories, on_delete=models.CASCADE, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -18,3 +19,6 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title
+
+class Image(models.Model):
+    image = models.ImageField(upload_to='static/img/')
