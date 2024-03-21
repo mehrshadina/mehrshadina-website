@@ -21,4 +21,4 @@ class Post(models.Model):
         return self.title
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='static/img/')
+    image = models.ImageField(upload_to='media/img/')
