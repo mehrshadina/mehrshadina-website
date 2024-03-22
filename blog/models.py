@@ -22,3 +22,7 @@ class Post(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to='img/')
+
+    def delete(self, *args, **kwargs):
+        self.image.delete()
+        super(Image, self).delete(*args, **kwargs)
