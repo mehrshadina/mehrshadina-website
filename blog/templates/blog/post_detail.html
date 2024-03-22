@@ -99,70 +99,24 @@
             </div>
             <div class="box-comments">
               <div class="title-box-2">
-                <h4 class="title-comments title-left">کامنت ها (34)</h4>
+                <h4 class="title-comments title-left">کامنت ها ()</h4>
               </div>
               <ul class="list-comments">
-                <li>
-                  <div class="comment-avatar">
-                    <img src="assets/img/testimonial-2.jpg" alt="">
-                  </div>
-                  <div class="comment-details">
-                    <h4 class="comment-author">Oliver Colmenares</h4>
-                    <span>18 Sep 2017</span>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis.
-                    </p>
-                    <a href="3">Reply</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="comment-avatar">
-                    <img src="assets/img/testimonial-4.jpg" alt="">
-                  </div>
-                  <div class="comment-details">
-                    <h4 class="comment-author">Carmen Vegas</h4>
-                    <span>18 Sep 2017</span>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis,
-                      veritatis deserunt.
-                    </p>
-                    <a href="3">Reply</a>
-                  </div>
-                </li>
-                <li class="comment-children">
-                  <div class="comment-avatar">
-                    <img src="/static/img/testimonial-2.jpg" alt="">
-                  </div>
-                  <div class="comment-details">
-                    <h4 class="comment-author">Oliver Colmenares</h4>
-                    <span>18 Sep 2017</span>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae.
-                    </p>
-                    <a href="3">Reply</a>
-                  </div>
-                </li>
+                {% for comment in comments %}
                 <li>
                   <div class="comment-avatar">
                     <img src="/static/img/testimonial-2.jpg" alt="">
                   </div>
                   <div class="comment-details">
-                    <h4 class="comment-author">Oliver Colmenares</h4>
-                    <span>18 Sep 2017</span>
+                    <h4 class="comment-author">{{ comment.author }}</h4>
+                    <span>{{ comment.pub_date.date }}</span>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae natus libero optio.
+                      {{ comment.body | linebreaks }}
                     </p>
                     <a href="3">Reply</a>
                   </div>
                 </li>
+                {% endfor %}
               </ul>
             </div>
             <div class="form-comments" style="direction: rtl;">
@@ -171,27 +125,17 @@
                     ارسال پیام
                   </h3>
                 </div>
-                <form class="form-mf">
-                  <div class="row">
+                <form class="form-mf" method="post">
+                  {% csrf_token %}   
+                  <div class="row">           
                     <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <input name="name" type="text" class="form-control input-mf" id="inputName" placeholder="نام *" required>
-                      </div>
+                      {{ form.author }}    
                     </div>
                     <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <input name="email" type="email" class="form-control input-mf" id="inputEmail1" placeholder="ایمیل *" required>
-                      </div>
+                      {{ form.email }}
                     </div>
                     <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <input name="subject" type="text" class="form-control input-mf" id="inputSubject" placeholder="موضوع پیام" required>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <textarea id="textMessage" class="form-control input-mf" placeholder="پیام خود را اینجا بنویسید *" name="message" cols="45" rows="8" required></textarea>
-                      </div>
+                      {{ form.body }}
                     </div>
                     <div class="col-md-12">
                       <button type="submit" class="button button-a button-big button-rouded">ارسال پیام</button>
@@ -255,24 +199,16 @@
               <div class="sidebar-content">
                 <ul>
                   <li>
-                    <a href="#">Web.</a>
-                  </li>
-                  <li>
-                    <a href="#">Design.</a>
-                  </li>
-                  <li>
-                    <a href="#">Travel.</a>
-                  </li>
-                  <li>
-                    <a href="#">Photoshop</a>
-                  </li>
-                  <li>
-                    <a href="#">Corel Draw</a>
-                  </li>
-                  <li>
-                    <a href="#">JavaScript</a>
+                    <a href="#">{{ post.category.name }}</a>
                   </li>
                 </ul>
+                <!--ul>
+                  {% for category in post.category.all %}
+                  <li> href="{% url 'blog_category' category.name %}">
+                        {{ category.name }}
+                  </li>
+                  {% endfor %}
+                </ul-->
               </div>
             </div>
           </div>
