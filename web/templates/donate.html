@@ -256,9 +256,9 @@
             <h5 class="sidebar-title">پست های اخیر</h5>
             <div class="sidebar-content">
               <ul class="list-sidebar">
-              {% for post in posts %}
+              {% for post in recent_posts %}
                 <li>
-                  <a href="% url 'post_detail' pk=post.pk %">{{ post.title }}</a>
+                  <a href="% url 'post_detail' pk=post.pk %">{{ post }}</a>
                 </li>
               {% endfor %}
               </ul>
@@ -268,45 +268,21 @@
             <h5 class="sidebar-title">آرشیو</h5>
             <div class="sidebar-content">
               <ul class="list-sidebar">
-                <li>
-                  <a href="#">درحال ساخت</a>
-                </li>
-                <li>
-                  <a href="#">...</a>
-                </li>
-                <li>
-                  <a href="#">...</a>
-                </li>
-                <li>
-                  <a href="#">...</a>
-                </li>
-                <li>
-                  <a href="#">...</a>
-                </li>
+              {% for archive in archives %}
+                <li><a href="{% url 'post_archive' year=archive.year_month|date:'Y' month=archive.year_month|date:'m' %}">{{ archive.year_month|date:"F Y" }} ({{ archive.count }} posts)</a></li>
+              {% endfor %}
               </ul>
             </div>
           </div>
           <div class="widget-sidebar widget-tags">
-            <h5 class="sidebar-title">Tags</h5>
+            <h5 class="sidebar-title">تگ‌ها</h5>
             <div class="sidebar-content">
               <ul>
                 <li>
-                  <a href="#">Web.</a>
+                  <a href="#">حمایت</a>
                 </li>
                 <li>
-                  <a href="#">Design.</a>
-                </li>
-                <li>
-                  <a href="#">Travel.</a>
-                </li>
-                <li>
-                  <a href="#">Photoshop</a>
-                </li>
-                <li>
-                  <a href="#">Corel Draw</a>
-                </li>
-                <li>
-                  <a href="#">JavaScript</a>
+                  <a href="#">support</a>
                 </li>
               </ul>
             </div>

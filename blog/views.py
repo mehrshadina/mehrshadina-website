@@ -6,8 +6,21 @@ from django.db.models import Count
 from django.db.models.functions import TruncMonth
 
 def post_list(request):
+    # Filter posts by year and month
     posts = Post.objects.all()
-    return render(request, 'blog/post_archive.html', {'posts': posts})
+    
+    # Fetch archives for navigation
+    archives = Post.objects.annotate(
+        year_month=TruncMonth('pub_date')
+    ).values('year_month').annotate(
+        count=Count('id')
+    ).order_by('-year_month')
+    
+    context = {
+        "posts": posts,
+        "archives": archives,
+    }
+    return render(request, 'blog/post_archive.html', context=context)
 
 def post_archive(request, year, month):
     # Filter posts by year and month

@@ -9,6 +9,8 @@ from .models import Project
 from .forms import ProjectForm
 from django.contrib import messages
 from blog.models import Post
+from django.db.models import Count
+from django.db.models.functions import TruncMonth
 
 # Create your views here.
 def index(request):
@@ -18,15 +20,45 @@ def index(request):
     return render(request, 'index.html', context)
 
 def contact(request):
-    context= {'posts': Post.objects.all()}
+    recent_posts = Post.objects.values_list('title', flat=True)
+    archives = Post.objects.annotate(
+        year_month=TruncMonth('pub_date')
+    ).values('year_month').annotate(
+        count=Count('id')
+    ).order_by('-year_month')
+
+    context= {
+        'recent_posts': recent_posts,
+        'archives': archives
+    }
     return render(request, 'contact.html', context)
 
 def about(request):
-    context= {'posts': Post.objects.all()}
+    recent_posts = Post.objects.values_list('title', flat=True)
+    archives = Post.objects.annotate(
+        year_month=TruncMonth('pub_date')
+    ).values('year_month').annotate(
+        count=Count('id')
+    ).order_by('-year_month')
+
+    context= {
+        'recent_posts': recent_posts,
+        'archives': archives
+    }
     return render(request, 'about.html', context)
 
 def donate(request):
-    context= {'posts': Post.objects.all()}
+    recent_posts = Post.objects.values_list('title', flat=True)
+    archives = Post.objects.annotate(
+        year_month=TruncMonth('pub_date')
+    ).values('year_month').annotate(
+        count=Count('id')
+    ).order_by('-year_month')
+
+    context= {
+        'recent_posts': recent_posts,
+        'archives': archives
+    }
     return render(request, 'donate.html', context)
 
 def project_order(request):
