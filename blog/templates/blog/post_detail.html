@@ -99,7 +99,7 @@
             </div>
             <div class="box-comments">
               <div class="title-box-2">
-                <h4 class="title-comments title-left">کامنت ها ()</h4>
+                <h4 class="title-comments title-left">کامنت ها ({{ comments.count }})</h4>
               </div>
               <ul class="list-comments">
                 {% for comment in comments %}
@@ -164,9 +164,9 @@
               <h5 class="sidebar-title">پست های اخیر</h5>
               <div class="sidebar-content">
                 <ul class="list-sidebar">
-                {% for post in posts %}
+                {% for post in recent_posts %}
                   <li>
-                    <a href="% url 'post_detail' pk=post.pk %">{{ post.title }}</a>
+                    <a href="% url 'post_detail' pk=post.pk %">{{ post }}</a>
                   </li>
                 {% endfor %}
                 </ul>
@@ -176,21 +176,9 @@
               <h5 class="sidebar-title">آرشیو</h5>
               <div class="sidebar-content">
                 <ul class="list-sidebar">
-                  <li>
-                    <a href="#">September, 2017.</a>
-                  </li>
-                  <li>
-                    <a href="#">April, 2017.</a>
-                  </li>
-                  <li>
-                    <a href="#">Nam quo autem exercitationem.</a>
-                  </li>
-                  <li>
-                    <a href="#">Atque placeat maiores nam quo autem</a>
-                  </li>
-                  <li>
-                    <a href="#">Nam quo autem exercitationem.</a>
-                  </li>
+                {% for archive in archives %}
+                  <li><a href="{% url 'post_archive' year=archive.year_month|date:'Y' month=archive.year_month|date:'m' %}">{{ archive.year_month|date:"F Y" }} ({{ archive.count }} posts)</a></li>
+                {% endfor %}
                 </ul>
               </div>
             </div>
