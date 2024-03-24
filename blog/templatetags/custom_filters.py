@@ -12,5 +12,6 @@ def markdown_to_html(markdown_text):
     soup = BeautifulSoup(html_content, 'html.parser')
     for img in soup.find_all('img'):
         img['class'] = 'img-fluid'
+        img['onclick'] = f"window.open('{img['src']}', '_blank');"
 
     return str(soup)
