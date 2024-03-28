@@ -14,8 +14,8 @@ from django.db.models.functions import TruncMonth
 
 # Create your views here.
 def index(request):
-    posts = Post.objects.all()
-    context= {'posts': posts}
+    #posts = Post.objects.all()
+    context= {}  # 'posts': posts}
     #return HttpResponse("Hello, world. You're at the web index.")
     return render(request, 'index.html', context)
 
