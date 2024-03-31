@@ -27,6 +27,17 @@ def contact(request):
         count=Count('id')
     ).order_by('-year_month')
 
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = Comment(
+                author=form.cleaned_data["author"],
+                body=form.cleaned_data["body"],
+                post=post,
+            )
+            comment.save()
+            return HttpResponseRedirect(request.path_info)
+
     context= {
         'recent_posts': recent_posts,
         'archives': archives

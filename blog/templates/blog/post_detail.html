@@ -93,8 +93,9 @@
                   </li>
                 </ul>
               </div>
+              {% load custom_filters %}
               <div class="article-content">
-                {{ post.content|linebreaks }}
+                {{ post.content|markdown_to_html|safe }}
               </div>
             </div>
             <div class="box-comments">
