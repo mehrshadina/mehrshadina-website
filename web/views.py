@@ -20,7 +20,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 def contact(request):
-    recent_posts = Post.objects.values_list('title', flat=True)
+    recent_posts = Post.objects.values_list('pk', 'title')
     archives = Post.objects.annotate(
         year_month=TruncMonth('pub_date')
     ).values('year_month').annotate(
@@ -45,7 +45,7 @@ def contact(request):
     return render(request, 'contact.html', context)
 
 def about(request):
-    recent_posts = Post.objects.values_list('title', flat=True)
+    recent_posts = Post.objects.values_list('pk', 'title')
     archives = Post.objects.annotate(
         year_month=TruncMonth('pub_date')
     ).values('year_month').annotate(
@@ -59,7 +59,7 @@ def about(request):
     return render(request, 'about.html', context)
 
 def donate(request):
-    recent_posts = Post.objects.values_list('title', flat=True)
+    recent_posts = Post.objects.values_list('pk', 'title')
     archives = Post.objects.annotate(
         year_month=TruncMonth('pub_date')
     ).values('year_month').annotate(

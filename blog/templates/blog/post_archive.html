@@ -122,7 +122,7 @@
                 <ul class="list-sidebar">
                 {% for post in posts %}
                   <li>
-                    <a href="% url 'post_detail' pk=post.pk %">{{ post.title }}</a>
+                    <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
                   </li>
                 {% endfor %}
                 </ul>

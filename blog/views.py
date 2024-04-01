@@ -40,7 +40,7 @@ def post_archive(request, year, month):
     return render(request, 'blog/post_archive.html', context=context)
 
 def post_detail(request, pk):
-    recent_posts = Post.objects.values_list('title', flat=True)
+    recent_posts = Post.objects.values_list('pk', 'title')
     post = Post.objects.get(pk=pk)
     form = CommentForm()
     if request.method == "POST":

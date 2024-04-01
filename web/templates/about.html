@@ -165,7 +165,7 @@
               <ul class="list-sidebar">
               {% for post in recent_posts %}
                 <li>
-                  <a href="% url 'post_detail' pk=post.pk %">{{ post }}</a>
+                  <a href="/blog/post/{{post.0}}/">{{ post.1 }}</a>
                 </li>
               {% endfor %}
               </ul>
