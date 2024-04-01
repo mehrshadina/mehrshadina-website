@@ -9,33 +9,58 @@
 
 <url>
   <loc>https://mehrshadina.ir/</loc>
-  <lastmod>2023-12-01T23:25:44+00:00</lastmod>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://mehrshadina.ir/donate/</loc>
-  <lastmod>2023-12-01T23:25:44+00:00</lastmod>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mehrshadina.ir/about/</loc>
-  <lastmod>2023-12-01T23:25:44+00:00</lastmod>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mehrshadina.ir/contact/</loc>
-  <lastmod>2023-12-01T23:25:44+00:00</lastmod>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mehrshadina.ir/blog/</loc>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mehrshadina.ir/project_order/</loc>
-  <lastmod>2023-12-01T23:25:44+00:00</lastmod>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mehrshadina.ir/tutoring/</loc>
-  <lastmod>2023-12-01T23:25:44+00:00</lastmod>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mehrshadina.ir/blog/post/1/</loc>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mehrshadina.ir/blog/post/2/</loc>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mehrshadina.ir/blog/post/3/</loc>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mehrshadina.ir/blog/archive/2024/03/</loc>
+  <lastmod>2024-04-01T09:19:56+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
