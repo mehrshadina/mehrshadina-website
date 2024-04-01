@@ -77,7 +77,17 @@ def project_order(request):
     return render(request, 'project_order.html', context)
 
 def tutoring(request):
-    context= {}
+    recent_posts = Post.objects.values_list('pk', 'title')
+    archives = Post.objects.annotate(
+        year_month=TruncMonth('pub_date')
+    ).values('year_month').annotate(
+        count=Count('id')
+    ).order_by('-year_month')
+
+    context= {
+        'recent_posts': recent_posts,
+        'archives': archives
+    }
     return render(request, 'tutoring.html', context)
 
 def projects(request):

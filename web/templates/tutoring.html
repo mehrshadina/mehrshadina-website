@@ -17,40 +17,38 @@
 </head>
 
 <body>
-  <!--/ Nav Star /-->
-  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md sticky-top bg-white" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="/">Mehrshadina</a>
+      <a class="navbar-brand js-scroll" href="/" style="color: #0078ff;">Mehrshadina</a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span style="background-color: #0078ff"></span>
+        <span style="background-color: #0078ff"></span>
+        <span style="background-color: #0078ff"></span>
       </button>
       <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="/">Home | خانه</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="/donate/">Donate | دونیت</a>
+            <a class="nav-link js-scroll active" style="color: #0078ff;" href="/">Home | خانه</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="/about/">About | درباره</a>
+            <a class="nav-link js-scroll" style="color: #0078ff;" href="/donate/">Donate | دونیت</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll active" href="/contact/">Contact | ارتباط</a>
+            <a class="nav-link js-scroll" style="color: #0078ff;" href="/about/">About | درباره</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" style="color: #0078ff;" href="/contact/">Contact | ارتباط</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" style="color: #0078ff;" href="/blog/">Blog | بلاگ</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <!--/ Nav End /-->
 
-
-  <!-- بخش تدریس خصوصی -->
-  <section class="intro intro-single route bg-image" style="background-image: url(/static/img/overlay-bg.jpg)">
+  <!--section class="intro intro-single route bg-image" style="background-image: url(/static/img/overlay-bg.jpg)">
     <div class="overlay-mf"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
@@ -66,44 +64,117 @@
         </div>
       </div>
     </div>
-  </section>
+  </section-->
 
-  <!-- بخش متنی -->
-  <div class="article-content mt-5 text-right">
-    <div class="container">
+  <section class="blog-wrapper mt-4" id="blog">
+    <div class="container text-right" style="direction: rtl;">
       <div class="row">
-        <div class="col-md-6">
-          <div class="box-image">
-            <img class="img-fluid mb-3" src="/static/img/private-tutor.png" alt="">
-
+        <div class="col-md-8">
+          <div class="post-box">
+            <div class="post-thumb">
+                <img src="/static/img/private-tutor.png" class="img-fluid" alt="mehrshadina-مهرشاد حدادی">
+            </div>
+            <div class="post-meta">
+              <h1 class="article-title" style="color: black">تدریس خصوصی</h1>
+              <ul style="padding-right: 15px; border-right: 4px solid #0078ff; border-left: 0px">
+                <li>
+                  <span class="ion-ios-person"></span>
+                  <a href="/about/">Mehrshadina</a>
+                </li>
+                <li>
+                  <span class="ion-pricetag"></span>
+                  <a href="/tutoring/">tutoring</a>
+                </li>
+                <li>
+                  <span class="ion-chatbox"></span>
+                  <a href="#">1</a>
+                </li>
+              </ul>
+            </div>
+            <div class="article-content" style="direction: rtl;">
+              <p>خدمات تدریس خصوصی من شامل دروس تخصصی و یادگیری مهارت‌های جدید می‌شود. با تدریس اختصاصی و تمرینات مستمر، من به شما کمک می‌کنیم تا در رشته‌های مختلف موفق شوید.</p>
+              <p>برای اطلاعات بیشتر و هماهنگی جهت تدریس خصوصی، لطفاً با من تماس بگیرید و توضیح دهید که در چه زمینه‌هایی نیاز به کمک دارید.</p>
+              <p>راه های ارتباطی:</p>
+              <ul>
+                <li>صفحه ارتباط بامن: <a href="/contact/">اینجا کلیک کنید</a></li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="text-box" style="direction: rtl;">
-            <p class="description">خدمات تدریس خصوصی من شامل دروس تخصصی و یادگیری مهارت‌های جدید می‌شود. با تدریس اختصاصی و تمرینات مستمر، من به شما کمک می‌کنیم تا در رشته‌های مختلف موفق شوید.</p>
-            <p class="description">برای اطلاعات بیشتر و هماهنگی جهت تدریس خصوصی، لطفاً با من تماس بگیرید و توضیح دهید که در چه زمینه‌هایی نیاز به کمک دارید.</p>
-            <p>راه های ارتباطی:</p>
-            <ul>
-              <li>صفحه ارتباط بامن: <a href="/contact/">اینجا کلیک کنید</a></li>
-            </ul>
+        <div class="col-md-4">
+          <div class="widget-sidebar sidebar-search">
+            <h5 class="sidebar-title">Search</h5>
+            <div class="sidebar-content">
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary btn-search" type="button">
+                      <span class="ion-android-search"></span>
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="widget-sidebar">
+            <h5 class="sidebar-title">پست های اخیر</h5>
+            <div class="sidebar-content">
+              <ul class="list-sidebar">
+              {% for post in recent_posts %}
+                <li>
+                  <a href="/blog/post/{{post.0}}/">{{ post.1 }}</a>
+                </li>
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="widget-sidebar">
+            <h5 class="sidebar-title">آرشیو</h5>
+            <div class="sidebar-content">
+              <ul class="list-sidebar">
+              {% for archive in archives %}
+                <li><a href="{% url 'post_archive' year=archive.year_month|date:'Y' month=archive.year_month|date:'m' %}">{{ archive.year_month|date:"F Y" }} ({{ archive.count }} posts)</a></li>
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="widget-sidebar widget-tags">
+            <h5 class="sidebar-title">تگ‌ها</h5>
+            <div class="sidebar-content">
+              <ul>
+                <li>
+                  <a href="#">آموزش</a>
+                </li>
+                <li>
+                  <a href="#">یادگیری</a>
+                </li>
+                <li>
+                  <a href="#">تدریس برنامه نویسی مهرشادینا</a>
+                </li>
+                <li>
+                  <a href="#">مهرشادینا اموزش</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(/static/img/overlay-bg.jpg);">
-    <div class="overlay-mf"></div>
+  <section class="paralax-mf footer-paralax">
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <div class="copyright-box text-white">
-              <p class="copyright">&copy; Copyright <strong>Mehrshadina</strong>. All Rights Reserved</p>
+            <div class="copyright-box">
+              <p class="copyright">
+                &copy; Copyright <strong>مهرشادینا</strong>. All Rights Reserved
+              </p>
               <div class="credits">
-                Designed by <a class="text-white" href="/">Mehrshadina</a>
+                Designed by <a href="/">Mehrshadina | مهرشادینا</a>
               </div>
-            </div>
             </div>
           </div>
         </div>
