@@ -624,11 +624,6 @@ a:hover {
   opacity: .9;
 }
 
-.intro .intro-title {
-  color: #fff;
-  font-size: 4rem;
-}
-
 .intro .intro-subtitle {
   font-size: 1.5rem;
   font-weight: 300;
@@ -751,6 +746,7 @@ a:hover {
 }
 
 .service-box .ico-circle {
+  padding-top: 8px;
   transition: all 500ms ease;
   font-size: 4rem;
 }
@@ -1210,6 +1206,17 @@ footer .credits a {
   }
 }
 
+@media (max-width: 577px) {
+  .counter-box {
+    margin-bottom: 1.8rem;
+  }
+
+  .intro-title {
+    font-size: 2rem;
+  }
+
+}
+
 @media (min-width: 767px) {
   .about-mf .box-pl2 {
     margin-top: 3rem;
@@ -1224,6 +1231,11 @@ footer .credits a {
     margin-top: 3rem;
     padding-left: 0rem;
   }
+
+  .intro-title {
+    font-size: 3.5rem;
+  }
+
 }
 
 @media (min-width: 768px) {
